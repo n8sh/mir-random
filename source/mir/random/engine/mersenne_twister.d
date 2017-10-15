@@ -170,10 +170,9 @@ original engine $(HTTP en.wikipedia.org/wiki/Mersenne_Twister,
 MT19937), generating uniformly-distributed 64-bit numbers with a
 period of 2 to the power of 19937.
 
-This is recommended for random number generation on 64-bit systems
-unless memory is severely restricted, in which case a
-$(REF_ALTTEXT Xorshift, Xorshift, mir, random, engine, xorshift)
-would be the generator of choice.
+Previously this was recommended for random number generation on 64-bit systems
+except in memory restricted circumstances but it has been superceded by
+$(REF_ALTTEXT Xorshift1024Star, Xorshift1024StarPhi, mir, random, engine, xorshift).
 +/
 alias Mt19937_64 = MersenneTwisterEngine!(ulong, 64, 312, 156, 31,
                                           0xb5026f5aa96619e9, 29, 0x5555555555555555, 17,

@@ -147,7 +147,10 @@ method being used.
 static if (is(size_t == uint))
     alias Random = Mt19937;
 else
-    alias Random = Mt19937_64;
+{
+    import mir.random.engine.xorshift : Xorshift1024StarPhi;
+    alias Random = Xorshift1024StarPhi;
+}
 
 ///
 version(mir_random_test) unittest
